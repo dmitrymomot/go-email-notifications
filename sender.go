@@ -1,4 +1,4 @@
-package mailnotify
+package mailnotifier
 
 import (
 	"bytes"

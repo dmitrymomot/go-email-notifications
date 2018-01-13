@@ -1,4 +1,4 @@
-package mailnotify
+package mailnotifier
 
 func init() {
 	InitFromDotenvFile()

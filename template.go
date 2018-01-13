@@ -1,4 +1,4 @@
-package mailnotify
+package mailnotifier
 
 // Templater is interface for email templates
 type Templater interface {

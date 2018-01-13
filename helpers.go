@@ -1,4 +1,4 @@
-package mailnotify
+package mailnotifier
 
 // SendEmailConfirmationMail helper to send an email confirmation code
 func SendEmailConfirmationMail(email, name, code string) (err error) {
