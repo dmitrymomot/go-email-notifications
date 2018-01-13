@@ -195,7 +195,7 @@ func (t *DefaultTemplate) HTML() string {
                     {{ if .Tpl.Product }}
                     <tr>
                       <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
-                        &copy; {{ Time.Now.Format "2018" }} <a href="{{ .Tpl.Product.Link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">{{ .Tpl.Product.Title }}</a>. All rights reserved.
+                        &copy; {{ .Tpl.Time.Now.Format "2018" }} <a href="{{ .Tpl.Product.Link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">{{ .Tpl.Product.Title }}</a>. All rights reserved.
                       </td>
                     </tr>
                     {{ end }}
