@@ -23,10 +23,7 @@ func InitFromDotenvFile() (err error) {
 		return
 	}
 
-	port, err := strconv.Atoi(os.Getenv("MAIL_SMTP_PORT"))
-	if err != nil {
-		return
-	}
+	port, _ := strconv.Atoi(os.Getenv("MAIL_SMTP_PORT"))
 
 	SetupConfig(&Config{
 		Host:     os.Getenv("MAIL_SMTP_HOST"),
