@@ -26,8 +26,8 @@ func (m *Mail) GetTemplate() Templater {
 func (m *Mail) GetRecipient() (email string, name string) {
 	email = m.Email
 	if m.Name == "" {
-		emailComponents := strings.Split(email, "@")
-		name = emailComponents[0]
+		ec := strings.Split(email, "@")
+		name = ec[0]
 	}
 	return
 }
