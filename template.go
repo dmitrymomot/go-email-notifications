@@ -182,17 +182,17 @@ func (t *DefaultTemplate) HTML() string {
                         <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">{{ .Tpl.CompanyAddress }}</span>
                         {{ end }}
                         {{ if .Tpl.UnsubscribeLink }}
-                        <br>Don't like these emails? <a href="{{ .Tpl.UnsubscribeLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
+                        <br>Don't like these emails? <a target="_blank" href="{{ .Tpl.UnsubscribeLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
                         {{ end }}
                         {{ if .Tpl.RemoveEmailLink }}
-                        <br>If this is not your account you can <a href="{{ .Tpl.RemoveEmailLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">remove your email from it.</a>.
+                        <br>If this is not your account you can <a target="_blank" href="{{ .Tpl.RemoveEmailLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">remove your email from it.</a>.
                         {{ end }}
                       </td>
                     </tr>
                     {{ if .Tpl.Product }}
                     <tr>
                       <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
-                        &copy; {{ now.Year }} <a href="{{ .Tpl.Product.Link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">{{ .Tpl.Product.Title }}</a>. All rights reserved.
+                        &copy; {{ now.Year }} <a target="_blank" href="{{ .Tpl.Product.Link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">{{ .Tpl.Product.Title }}</a>. All rights reserved.
                       </td>
                     </tr>
                     {{ end }}
