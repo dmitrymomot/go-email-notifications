@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 
+	"github.com/Masterminds/sprig"
 	gomail "gopkg.in/gomail.v2"
 )
 
@@ -37,7 +38,7 @@ func getClient() *gomail.Dialer {
 }
 
 func parseTemplate(mail Mailer) (tpl string, err error) {
-	t := template.Must(template.New("").Parse(mail.GetTemplate().HTML()))
+	t := template.Must(template.New("").Funcs(sprig.FuncMap()).Parse(mail.GetTemplate().HTML()))
 	var buffer bytes.Buffer
 	if err = t.Execute(&buffer, mail); err != nil {
 		log.Println(err)

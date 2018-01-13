@@ -1,7 +1,5 @@
 package mailnotifier
 
-import "time"
-
 // Templater is interface for email templates
 type Templater interface {
 	HTML() string
@@ -29,7 +27,6 @@ type DefaultTemplate struct {
 	CompanyAddress  string
 	UnsubscribeLink string
 	RemoveEmailLink string
-	Time            time.Time
 }
 
 // HTML method returns HTML string
@@ -185,17 +182,17 @@ func (t *DefaultTemplate) HTML() string {
                         <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">{{ .Tpl.CompanyAddress }}</span>
                         {{ end }}
                         {{ if .Tpl.UnsubscribeLink }}
-                        Don't like these emails? <a href="{{ .Tpl.UnsubscribeLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
+                        <br>Don't like these emails? <a href="{{ .Tpl.UnsubscribeLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
                         {{ end }}
                         {{ if .Tpl.RemoveEmailLink }}
-                        If this is not your account you can <a href="{{ .Tpl.RemoveEmailLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">remove your email from it.</a>.
+                        <br>If this is not your account you can <a href="{{ .Tpl.RemoveEmailLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">remove your email from it.</a>.
                         {{ end }}
                       </td>
                     </tr>
                     {{ if .Tpl.Product }}
                     <tr>
                       <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
-                        &copy; {{ .Tpl.Time.Now.Format "2018" }} <a href="{{ .Tpl.Product.Link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">{{ .Tpl.Product.Title }}</a>. All rights reserved.
+                        &copy; {{ now.Year }} <a href="{{ .Tpl.Product.Link }}" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">{{ .Tpl.Product.Title }}</a>. All rights reserved.
                       </td>
                     </tr>
                     {{ end }}

@@ -7,14 +7,14 @@ func SendEmailConfirmationMail(email, name, code string) (err error) {
 		Email:   email,
 		Subject: "Confirm Email",
 		Tpl: &DefaultTemplate{
-			Preheader: "preheader test string",
-			Intro:     []string{"test intro"},
-			Outro:     []string{"test outro"},
+			Preheader: "preheader test string preheader test string preheader test string",
+			Intro:     []string{"test intro", "test intro 2"},
+			Outro:     []string{"test outro", "test outro 2"},
 			Button: &ButtonTpl{
 				Title: "Confirm Email",
 				Link:  config.ConfirmEmailLink,
 			},
-			CompanyAddress:  "Company Address test",
+			CompanyAddress:  "Company Address test Company Address test Company Address test",
 			UnsubscribeLink: config.UnsubscribeLink,
 			RemoveEmailLink: config.RemoveEmailLink,
 			Product: &ProductTpl{
