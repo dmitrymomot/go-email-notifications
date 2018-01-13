@@ -36,9 +36,12 @@ func InitFromDotenvFile() (err error) {
 
 		SenderEmail: os.Getenv("MAIL_FROM_ADDR"),
 		SenderName:  os.Getenv("MAIL_FROM_NAME"),
-		ProjectName: os.Getenv("APP_NAME"),
+
+		ProductName: os.Getenv("APP_NAME"),
+		ProductLink: os.Getenv("WEBSITE_URL"),
 
 		UnsubscribeLink:   os.Getenv("MAIL_UNSUBSCRIBE_LINK"),
+		RemoveEmailLink:   os.Getenv("MAIL_REMOVE_LINK"),
 		ConfirmEmailLink:  os.Getenv("MAIL_CONFIRM_LINK"),
 		ResetPasswordLink: os.Getenv("MAIL_RESET_LINK"),
 	})
@@ -50,7 +53,9 @@ func InitFromDotenvFile() (err error) {
 type Config struct {
 	SenderEmail string
 	SenderName  string
-	ProjectName string
+
+	ProductName string
+	ProductLink string
 
 	Host     string
 	Port     int
@@ -58,6 +63,7 @@ type Config struct {
 	Password string
 
 	UnsubscribeLink   string
+	RemoveEmailLink   string
 	ConfirmEmailLink  string
 	ResetPasswordLink string
 }
@@ -66,11 +72,11 @@ func (c *Config) getSenderName() (name string) {
 	if c.SenderName != "" {
 		name = c.SenderName
 	}
-	if c.ProjectName != "" && name != "" {
-		name = name + " from " + c.ProjectName
+	if c.ProductName != "" && name != "" {
+		name = name + " from " + c.ProductName
 	}
-	if c.ProjectName != "" && name == "" {
-		name = c.ProjectName
+	if c.ProductName != "" && name == "" {
+		name = c.ProductName
 	}
 	return
 }

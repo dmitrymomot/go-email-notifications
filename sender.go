@@ -39,10 +39,6 @@ func getClient() *gomail.Dialer {
 func parseTemplate(mail Mailer) (tpl string, err error) {
 	t := template.Must(template.New("").Parse(mail.GetTemplate().HTML()))
 	var buffer bytes.Buffer
-	if err = t.Execute(&buffer, config); err != nil {
-		log.Println(err)
-		return
-	}
 	if err = t.Execute(&buffer, mail); err != nil {
 		log.Println(err)
 		return

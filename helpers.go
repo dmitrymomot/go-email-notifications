@@ -12,14 +12,14 @@ func SendEmailConfirmationMail(email, name, code string) (err error) {
 			Outro:     []string{"test outro"},
 			Button: &ButtonTpl{
 				Title: "Confirm Email",
-				Link:  "http://localhost:8080",
+				Link:  config.ConfirmEmailLink,
 			},
 			CompanyAddress:  "Company Address test",
-			UnsubscribeLink: "http://localhost:8080/unsubscribe",
-			RemoveEmailLink: "http://localhost:8080/remove",
+			UnsubscribeLink: config.UnsubscribeLink,
+			RemoveEmailLink: config.RemoveEmailLink,
 			Product: &ProductTpl{
-				Title: "Pixamazer",
-				Link:  "http://pixamazer.com",
+				Title: config.ProductName,
+				Link:  config.ProductLink,
 			},
 		},
 	})
