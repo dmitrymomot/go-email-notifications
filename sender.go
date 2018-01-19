@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"log"
 
-	"github.com/Masterminds/sprig"
+	"github.com/dmitrymomot/sprig"
 	gomail "gopkg.in/gomail.v2"
 )
 
