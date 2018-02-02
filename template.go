@@ -182,10 +182,10 @@ func (t *DefaultTemplate) HTML() string {
                         <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">{{ .Tpl.CompanyAddress }}</span>
                         {{ end }}
                         {{ if .Tpl.UnsubscribeLink }}
-                        <br>Don't like these emails? <a target="_blank" href="{{ .Tpl.UnsubscribeLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
+                        <br>Don't like these emails? <a target="_blank" href="%unsubscribe_url%" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
                         {{ end }}
                         {{ if .Tpl.RemoveEmailLink }}
-                        <br>If this is not your account you can <a target="_blank" href="{{ .Tpl.RemoveEmailLink }}" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">remove your email from it.</a>.
+                        <br>If this is not your account you can <a target="_blank" href="%unsubscribe_url%" style="text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">remove your email from it.</a>.
                         {{ end }}
                       </td>
                     </tr>
