@@ -20,7 +20,7 @@ func SendEmailConfirmationMail(email, name, code string) (err error) {
 				Title: "Confirm My Email",
 				Link:  config.ConfirmEmailLink + "?email=" + email + "&code=" + code,
 			},
-			RemoveEmailLink: config.RemoveEmailLink + "?email=" + email + "&code=" + code,
+			RemoveEmailLink: "%unsubscribe_url%",
 			Product: &ProductTpl{
 				Title: config.ProductName,
 				Link:  config.ProductLink,
@@ -48,7 +48,7 @@ func SendResetPasswordMail(email, name, code string) (err error) {
 				Title: "Reset Password",
 				Link:  config.ResetPasswordLink + "?email=" + email + "&code=" + code,
 			},
-			RemoveEmailLink: config.RemoveEmailLink + "?email=" + email + "&code=" + code,
+			RemoveEmailLink: "%unsubscribe_url%",
 			Product: &ProductTpl{
 				Title: config.ProductName,
 				Link:  config.ProductLink,
