@@ -34,7 +34,7 @@ func Send(mail Mailer) (err error) {
 }
 
 func getClient() *gomail.Dialer {
-	return gomail.NewDialer(config.Host, config.Port, config.Username, config.Password)
+	return gomail.NewPlainDialer(config.Host, config.Port, config.Username, config.Password)
 }
 
 func parseTemplate(mail Mailer) (tpl string, err error) {
